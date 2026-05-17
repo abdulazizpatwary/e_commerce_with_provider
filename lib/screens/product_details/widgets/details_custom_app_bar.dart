@@ -1,12 +1,16 @@
+import 'package:emmercewithprovider/models/product.dart';
+import 'package:emmercewithprovider/provider/favourite_provider.dart';
 import 'package:flutter/material.dart';
 
 class DetailsCustomAppBar extends StatelessWidget {
   const DetailsCustomAppBar({
-    super.key,
+    super.key, required this.product,
   });
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
+    final provider=FavouriteProvider.of(context);
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Row(
@@ -35,7 +39,11 @@ class DetailsCustomAppBar extends StatelessWidget {
               backgroundColor: Colors.white,
               padding: EdgeInsets.all(15),
             ),
-            onPressed: (){}, icon: Icon(Icons.favorite_outline),
+            onPressed: (){
+              provider.toggleFavourite(product);
+            }, icon: Icon(
+            provider.isExist(product)?Icons.favorite:
+              Icons.favorite_outline),
           ),
 
         ],

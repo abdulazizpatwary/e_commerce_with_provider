@@ -1,5 +1,6 @@
 import 'package:emmercewithprovider/app/app_color.dart';
 import 'package:emmercewithprovider/models/product.dart';
+import 'package:emmercewithprovider/provider/favourite_provider.dart';
 import 'package:emmercewithprovider/screens/product_details/product_details_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class ProductCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final FavouriteProvider favouriteProvider = FavouriteProvider.of(context);
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetailsScreen(product: product,)));
@@ -89,19 +91,25 @@ class ProductCardWidget extends StatelessWidget {
             right: 0,
             child: Align(
               alignment: Alignment.topRight,
-              child: Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: AppColors.kPrimaryColor,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    bottomLeft: Radius.circular(8),
+              child: GestureDetector(
+                onTap: (){
+                  favouriteProvider.toggleFavourite(product);
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: AppColors.kPrimaryColor,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(8),
+                    ),
                   ),
-                ),
-                child: Icon(
-                  Icons.favorite_outline,
-                  color: Colors.white,
-                  size: 18,
+                  child: Icon(
+                    favouriteProvider.isExist(product)?Icons.favorite:
+                    Icons.favorite_outline,
+                    color: Colors.white,
+                    size: 18,
+                  ),
                 ),
               ),
             ),

@@ -1,4 +1,3 @@
-import 'package:emmercewithprovider/app/app_assets.dart';
 import 'package:emmercewithprovider/app/app_color.dart';
 import 'package:emmercewithprovider/models/product.dart';
 import 'package:emmercewithprovider/screens/product_details/widgets/AddToCartWidget.dart';
@@ -27,7 +26,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         child: Column(
           children: [
             //SizedBox(height: 10,),
-            DetailsCustomAppBar(),
+            DetailsCustomAppBar(product: widget.product,),
             DetailsImageSlidet(image: widget.product.image, onChange: (currentIndex) {
               this.currentIndex=currentIndex;
               setState(() {});

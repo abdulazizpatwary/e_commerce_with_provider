@@ -1,6 +1,3 @@
-import 'package:emmercewithprovider/app/app_assets.dart';
-import 'package:emmercewithprovider/app/app_color.dart';
-import 'package:emmercewithprovider/models/category_model.dart';
 import 'package:emmercewithprovider/models/product.dart';
 import 'package:emmercewithprovider/screens/home/widgets/category_widget.dart';
 import 'package:emmercewithprovider/screens/home/widgets/custom_app_bar.dart';
@@ -8,6 +5,7 @@ import 'package:emmercewithprovider/screens/home/widgets/home_slider.dart';
 import 'package:emmercewithprovider/screens/home/widgets/product_card.dart';
 import 'package:emmercewithprovider/screens/home/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   int slideIndex = 0;
 
   @override

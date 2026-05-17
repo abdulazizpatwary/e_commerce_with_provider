@@ -1,6 +1,6 @@
 import 'package:emmercewithprovider/app/app_color.dart';
 import 'package:emmercewithprovider/screens/cart/cart_list_screen.dart';
-import 'package:emmercewithprovider/screens/favourite.dart';
+import 'package:emmercewithprovider/screens/favourite/favourite.dart';
 import 'package:emmercewithprovider/screens/home/home_screen.dart';
 import 'package:emmercewithprovider/screens/product_details/product_details_screen.dart';
 import 'package:flutter/material.dart';
