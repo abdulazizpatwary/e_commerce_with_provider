@@ -19,7 +19,7 @@ This app includes product browsing, favorites, cart management, product details,
 
 ---
 
-## 🛠 Technologies Used
+##  Technologies Used
 
 - Flutter
 - Dart
@@ -35,7 +35,7 @@ This app includes product browsing, favorites, cart management, product details,
 ![Home](app_screenshots/home.png)
 
 ### Extended Home Screen
-![Home Extended](app_screenshots/home_extends.png)
+![Home Extended](app_screenshots/home_extendes.png)
 
 ### Product Details Screen
 ![Product Details](app_screenshots/product_details.png)
