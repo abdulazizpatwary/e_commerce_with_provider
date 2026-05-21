@@ -11,7 +11,7 @@ class ProductCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final FavouriteProvider favouriteProvider = FavouriteProvider.of(context);
+    final provider = FavouriteProvider.of(context);
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetailsScreen(product: product,)));
@@ -93,7 +93,7 @@ class ProductCardWidget extends StatelessWidget {
               alignment: Alignment.topRight,
               child: GestureDetector(
                 onTap: (){
-                  favouriteProvider.toggleFavourite(product);
+                  provider.toggleFavourite(product);
                 },
                 child: Container(
                   padding: EdgeInsets.all(8),
@@ -105,7 +105,7 @@ class ProductCardWidget extends StatelessWidget {
                     ),
                   ),
                   child: Icon(
-                    favouriteProvider.isExist(product)?Icons.favorite:
+                    provider.isExist(product)?Icons.favorite:
                     Icons.favorite_outline,
                     color: Colors.white,
                     size: 18,

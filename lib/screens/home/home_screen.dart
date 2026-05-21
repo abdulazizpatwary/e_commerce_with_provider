@@ -17,9 +17,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   int slideIndex = 0;
+  int selectedCategoryIndex=0;
 
   @override
   Widget build(BuildContext context) {
+    List<List<Product>> selectedCategories=[
+      Product.all,
+      Product.shoes,
+      Product.beauty,
+      Product.womensFashion,
+      Product.jewelery,
+      Product.mensFashion,
+    ];
     return Scaffold(
       backgroundColor: Colors.white,
 
@@ -42,7 +51,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 currentSlider: slideIndex,
               ),
               SizedBox(height: 20),
-              CategoryWidget(),
+              CategoryWidget(onTap: (int p1) {
+                selectedCategoryIndex=p1;
+                setState(() {
+
+                });
+
+              },),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
               GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: Product.products.length,
+                itemCount: selectedCategories[selectedCategoryIndex].length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.78,
@@ -76,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisSpacing: 20,
                 ),
                 itemBuilder: (context, index) {
-                  return ProductCardWidget(product: Product.products[index]);
+                  return ProductCardWidget(product: selectedCategories[selectedCategoryIndex][index]);
                 },
               ),
             ],

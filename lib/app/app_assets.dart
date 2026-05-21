@@ -16,4 +16,6 @@ class AppAssets {
  static const womenSweaterUrl='$_baseUrl/women_sweater.png';
  static const smartWatchUrl='$_baseUrl/smart_watch.png';
  static const mensJacketUrl='$_baseUrl/mens_jacket.png';
+
+ static const profilePngUrl='$_baseUrl/profile.png';
 }

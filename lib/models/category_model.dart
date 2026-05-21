@@ -7,6 +7,7 @@ class CategoryModel {
   CategoryModel({required this.title, required this.image});
   static List<CategoryModel> get getCategoryModelList{
     return [
+      CategoryModel(title: 'All', image: AppAssets.beautyProductsUrl),
       CategoryModel(title: 'Shoes', image: AppAssets.shoeUrl),
       CategoryModel(title: 'Beauty', image: AppAssets.beautyProductsUrl),
       CategoryModel(title: "women's\nFashion", image: AppAssets.womensFashionUrl),

@@ -18,7 +18,7 @@ class CartProvider extends ChangeNotifier{
   void toggleFavourite(Product product){
     if(_cartList.contains(product)){
       for(Product element in _cartList){
-      if(element==product){
+      if(element.id==product.id){
         element.quantity++;
 
       }

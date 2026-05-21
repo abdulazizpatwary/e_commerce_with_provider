@@ -3,6 +3,7 @@ import 'package:emmercewithprovider/screens/cart/cart_list_screen.dart';
 import 'package:emmercewithprovider/screens/favourite/favourite.dart';
 import 'package:emmercewithprovider/screens/home/home_screen.dart';
 import 'package:emmercewithprovider/screens/product_details/product_details_screen.dart';
+import 'package:emmercewithprovider/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
@@ -19,12 +20,13 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     Favourite(),
     HomeScreen(),
     CartListScreen(),
-    Scaffold()
+     Profile()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: screensList[currentIndex],
       floatingActionButton: FloatingActionButton(onPressed: (){
         currentIndex=2;

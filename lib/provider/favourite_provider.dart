@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class FavouriteProvider extends ChangeNotifier{
-  List<Product>_favouriteList=[];
+  final List<Product>_favouriteList=[];
   List<Product>get favouriteList=>_favouriteList;
 
   void toggleFavourite(Product product){
-    if(_favouriteList.contains(product)){
-      for(Product element in _favouriteList){
-        if(element==product){
-          _favouriteList.remove(product);
-        }
+    bool isAlreadyAdded=false;
+    for(Product element in _favouriteList){
+      if(element.id==product.id){
+        isAlreadyAdded=true;
       }
+    }
+    if(isAlreadyAdded){
+      _favouriteList.remove(product);
     }
     else{
       _favouriteList.add(product);
@@ -21,8 +23,15 @@ class FavouriteProvider extends ChangeNotifier{
 
   }
   bool isExist(Product product){
-    final isExist = _favouriteList.contains(product);
+    bool isExist=false;
+    for(Product element in _favouriteList){
+      if(element.id==product.id){
+        isExist=true;
+      }
+    }
+    notifyListeners();
     return isExist;
+
   }
 
   void removeFromList(Product product){
